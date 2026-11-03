@@ -29,6 +29,7 @@
         <!-- Ruta a las hojas de estilos -->
         <link rel="stylesheet" href="../assets/css/images.css" />
         <link rel="stylesheet" href="../assets/css/tipografia.css" />
+        <link rel="stylesheet" href="../assets/css/formularios.css">
         <link rel="stylesheet" href="../assets/css/menu.css" />
         <link rel="stylesheet" href="../assets/css/carrousel.css" />
         <link rel="stylesheet" href="../assets/css/variables.css" />
@@ -88,7 +89,7 @@
             
               <article>
                 <h3>Formulario de conctato</h3>
-                <form action="enviado.html" method="post" class="form" id="form">
+                <form action="enviado.html" method="post" enctype="multipart/form-data" class="form" id="form">
 
                     <fieldset>
                         <legend>Datos Personales</legend>
@@ -127,6 +128,15 @@
                             </li>
                         </ul>
                     </fieldset>
+                    <p id="errores"></p>
+                    <ul class="enviar">
+                        <li>
+                             <input type="submit" value="Enviar" id="enviar" />
+                        </li>
+                        <li>
+                            <input type="reset" value="Borrar"/>
+                        </li>
+                    </ul>
                 </form>
               </article>
             </section>
