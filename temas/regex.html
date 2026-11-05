@@ -204,7 +204,7 @@
                                         NOTA: no detecta fechas imposibles como 31/02/2025; 
                                         para eso hace falta JavaScript o type="date".
                                     -->
-                                    <!-- <input type="text" id="fecha" name="fecha" required title="Formato dd/mm/aaaa. Ejemplo: 04/11/2026" pattern="([012][0-9]|3[01])/(0[1-9]|1][012])/([12][09]{3})" /> -->
+                                    <!-- <input type="text" id="fecha" name="fecha"  title="Formato dd/mm/aaaa. Ejemplo: 04/11/2026" pattern="([012][0-9]|3[01])/(0[1-9]|1][012])/([12][09]{3})" /> -->
                                     <input type="date" min="1900-01-01" max="2026-11-11" />
                                 </li>
                                 <li>
@@ -224,7 +224,7 @@
                                         - Mínimo 8 caracteres y un maximo de 26
                                         - Al menos una minúscula, una mayúscula y un número.
                                     -->
-                                    <!-- <input type="password" id="clave" name="clave" required title="Mínimo 8 caracteres con al menos una minúscula, una mayúscula y un número" /> -->
+                                    <!-- <input type="password" id="clave" name="clave"  title="Mínimo 8 caracteres con al menos una minúscula, una mayúscula y un número" /> -->
                                     <input type="password" name="pass" id="pass" minlength="8" maxlength="26" pattern="[a-z]+" />
                                 </li>
                                 <li>
@@ -275,7 +275,7 @@
                                         Los números pueden comenzar por cero.
                                         La letra debe corresponder al resto módulo 23.
                                     -->
-                                    <input type="text" id="dni" name="dni" placeholder="12345678Z" maxlength="9" title="" required />
+                                    <input type="text" id="dni" name="dni" placeholder="12345678Z" maxlength="9" title="" />
                                 </li>
 
                                 <li>
@@ -297,7 +297,7 @@
                                         Entre 2 y 30 caracteres.
                                         Admitir letras españolas, acentos y espacios.
                                     -->
-                                    <input type="text" id="nombre" name="nombre" maxlength="30" title="" required />
+                                    <input type="text" id="nombre" name="nombre" maxlength="30" title="" />
                                 </li>
 
                                 <li>
@@ -308,7 +308,7 @@
                                         Entre 2 y 60 caracteres.
                                         Admitir letras, acentos, espacios y guiones.
                                     -->
-                                    <input type="text" id="apellidos" name="apellidos" maxlength="60" required />
+                                    <input type="text" id="apellidos" name="apellidos" maxlength="60" />
                                 </li>
 
                                 <li>
@@ -319,13 +319,13 @@
                                         Debe ser una fecha comprendida entre 18 y 100 años.
                                         min y max son restricciones de fecha, no patrones.
                                     -->
-                                    <input type="date" id="nacimiento" name="nacimiento" min="" max="" required />
+                                    <input type="date" id="nacimiento" name="nacimiento" min="" max="" />
                                 </li>
 
                                 <li>
                                     <label for="estadoCivil">Estado civil:</label>
 
-                                    <select id="estadoCivil" name="estadoCivil" required>
+                                    <select id="estadoCivil" name="estadoCivil">
                                         <option value="">Selecciona...</option>
                                         <option value="soltero">Soltero/a</option>
                                         <option value="casado">Casado/a</option>
@@ -368,7 +368,7 @@
                                         Fijo: comienza por 8 o 9.
                                         No admitir espacios ni prefijos internacionales.
                                     -->
-                                    <input type="tel" id="telefono" name="telefono" placeholder="600123456" maxlength="9" title="" required />
+                                    <input type="tel" id="telefono" name="telefono" placeholder="600123456" maxlength="9" pattern="^[6789]\d{8}$" title="Debe tener exactamente 9 cifras y empezar por 6, 7, 8 o 9, sin espacios ni prefijos." />
                                 </li>
 
                                 <li>
@@ -379,7 +379,7 @@
                                         El navegador comprueba la estructura del correo.
                                         Completar con un pattern para una validación básica.
                                     -->
-                                    <input type="email" id="email" name="email" placeholder="usuario@dominio.es" pattern="" title="" required />
+                                    <input type="email" id="email" name="email" placeholder="usuario@dominio.es" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]{1,}+\.[a-zA-Z]{2,}$" title="Introduce un correo válido (ejemplo: usuario@dominio.es)" />
                                 </li>
 
                                 <li>
@@ -390,14 +390,14 @@
                                         El navegador comprueba que tenga formato de URL.
                                         Probar y mejorar con un pattern
                                     -->
-                                    <input type="url" id="web" name="web" placeholder="https://www.ejemplo.es" pattern="" title="" />
+                                    <input type="url" id="web" name="web" placeholder="https://www.ejemplo.es" pattern="^https?://.+" title="La URL debe empezar por http:// o https://" />
                                 </li>
 
                                 <li>
                                     <label for="contacto">Buscar contacto (ejemplo):</label>
 
                                     <!-- INPUT HTML5: search -->
-                                    <input type="search" id="contacto" name="contacto" />
+                                    <input type="search" id="contacto" name="contacto" pattern="[a-zA-Z0-9]{2,}" />
                                 </li>
 
                                 <li>
@@ -409,7 +409,7 @@
                                         Al menos una mayúscula, una minúscula,
                                         un número y un carácter especial.
                                     -->
-                                    <input type="password" id="password" name="password" minlength="" maxlength="" title="" required />
+                                    <input type="password" id="password" name="password" minlength="" maxlength="" title="Entre 8 y 16 caracteres. Debe incluir al menos una mayúscula, una minúscula, un número y un carácter especial." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,16}$" />
                                 </li>
                             </ul>
                         </fieldset>
@@ -431,7 +431,7 @@
                                         Admitir letras, números, espacios,
                                         comas, puntos, guiones y barras.
                                     -->
-                                    <input type="text" id="direccion" name="direccion" maxlength="" title="" required />
+                                    <input type="text" id="direccion" name="direccion" maxlength="" title="" />
                                 </li>
 
                                 <li>
@@ -441,7 +441,7 @@
                                         PISTA:
                                         Entre 2 y 50 letras, espacios y guiones.
                                     -->
-                                    <input type="text" id="localidad" name="localidad" title="" required />
+                                    <input type="text" id="localidad" name="localidad" title="" />
                                 </li>
 
                                 <li>
@@ -453,7 +453,7 @@
                                         Los códigos postales españoles empiezan
                                         por un número entre 01 y 52.
                                     -->
-                                    <input type="text" id="cp" name="cp" placeholder="27001" minlength="" maxlength="" title="" required />
+                                    <input type="text" id="cp" name="cp" placeholder="27001" minlength="" maxlength="" title="" />
                                 </li>
 
                                 <li>
@@ -464,7 +464,7 @@
                                         Dos cifras entre 01 y 52.
                                         Ejemplo: 27 para Lugo.
                                     -->
-                                    <input type="text" id="provincia" name="provincia" maxlength="" title="" required />
+                                    <input type="text" id="provincia" name="provincia" maxlength="" title="" />
                                 </li>
                                 <!-- Agregar un select con provincias españolas buscadas de internet -->
                             </ul>
@@ -522,13 +522,13 @@
                                         Mínimo 600 euros.
                                         Admite decimales de hasta dos cifras.
                                     -->
-                                    <input type="number" id="salario" name="salario" min="" max="" step="" title="" required />
+                                    <input type="number" id="salario" name="salario" min="" max="" step="" title="" />
                                 </li>
 
                                 <li>
                                     <label for="contrato">Tipo de contrato:</label>
 
-                                    <select id="contrato" name="contrato" required>
+                                    <select id="contrato" name="contrato">
                                         <option value="">Selecciona...</option>
                                         <option value="indefinido">Indefinido</option>
                                         <option value="temporal">Temporal</option>
@@ -562,7 +562,7 @@
                                         Entre 1.000 y 60.000 euros.
                                         Sin decimales.
                                     -->
-                                    <input type="number" id="importe" name="importe" title="" required />
+                                    <input type="number" id="importe" name="importe" title="" />
                                 </li>
 
                                 <li>
@@ -572,13 +572,13 @@
                                         INPUT HTML5: number.
                                         Entre 12 y 120 meses.
                                     -->
-                                    <input type="number" id="plazo" name="plazo" min="" max="" step="" title="" required />
+                                    <input type="number" id="plazo" name="plazo" min="" max="" step="" title="" />
                                 </li>
 
                                 <li>
                                     <label for="finalidad">Finalidad del préstamo:</label>
                                     <!-- Ejemplo -->
-                                    <select id="finalidad" name="finalidad" required>
+                                    <select id="finalidad" name="finalidad">
                                         <option value="">Selecciona...</option>
                                         <option value="reformas">Reformas</option>
                                         <option value="vehiculo">Vehículo</option>
@@ -649,13 +649,13 @@
                                         Dos cifras de control y veinte cifras de cuenta.
                                         El patrón valida el formato, no el dígito de control.
                                     -->
-                                    <input type="text" id="iban" name="iban" placeholder="ES9121000418450200051332" maxlength="" title="" required />
+                                    <input type="text" id="iban" name="iban" placeholder="ES9121000418450200051332" maxlength="" title="" />
                                 </li>
 
                                 <li>
                                     <label for="titular">Titular de la cuenta:</label>
 
-                                    <input type="text" id="titular" name="titular" pattern="" title="" required />
+                                    <input type="text" id="titular" name="titular" pattern="" title="" />
                                 </li>
 
                                 <li>
@@ -712,14 +712,14 @@
                                 <li>
                                     <!-- INPUT CLÁSICO: checkbox -->
                                     <label>
-                                        <input type="checkbox" name="privacidad" value="si" required />
+                                        <input type="checkbox" name="privacidad" value="si" />
                                         Acepto la política de privacidad.
                                     </label>
                                 </li>
 
                                 <li>
                                     <label>
-                                        <input type="checkbox" name="consulta" value="si" required />
+                                        <input type="checkbox" name="consulta" value="si" />
                                         Autorizo la consulta de solvencia.
                                     </label>
                                 </li>
