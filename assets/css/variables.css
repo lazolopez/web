@@ -16,10 +16,10 @@
     /* Colores del sitio */
     --color-1: red;
     --color-2: blue;
-    --color-3: green;
+    --color-3: rgb(20, 94, 34);
     --color-4: pink;
 
-    --color-texto: #666;
+    --color-texto: #141010;
     --bg-body: #fefefe;
 
     --color-a: blue;

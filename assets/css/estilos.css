@@ -94,6 +94,7 @@ html {
 
 main {
     min-height: 100vh;
+    background-color: rgb(243, 239, 239);
 }
 
 /* main > section > article {
