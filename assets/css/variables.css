@@ -19,9 +19,10 @@
     --color-3: rgb(20, 94, 34);
     --color-4: pink;
 
-    --color-texto: #ffffff;
-    --bg-body: #fefefe;
-    --bg-footer: #222;
+    --color-texto: #130707;
+    --bg-body: #efe0e0;
+    --bg-footer: #101010;
+    --color-a-footer: #fff;
 
     --color-a: blue;
     --color-a--cover: red;
@@ -55,6 +56,6 @@
     --galeria-5--thumb: url("../img/blue-sky-photopea\ 300px.webp");
 
     --logo-url: url(../svg/dangtalogo.svg);
-    --logo-ratio: 248/165;
+    --logo-ratio: 219/59;
     --marca-agua-h: 5rem;
 }

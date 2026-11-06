@@ -1,6 +1,67 @@
+@charset "UTF-8";
+
+body {
+    position: relative;
+
+    & > header {
+        z-index: 3;
+    }
+    & > nav {
+        z-index: 2;
+    }
+
+    & > footer {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+body {
+    & > header,
+    & > nav.principal {
+        position: fixed;
+        top: 0;
+        height: var(--h-menu);
+    }
+}
+
+body {
+    & > header {
+        display: flex;
+        align-items: center;
+
+        & a {
+            & figure.logo {
+                height: var(--h-logo-header);
+                width: calc(var(--logo-h) * var(--logo-ratio));
+                /* aspect-ratio: var(--logo-ratio); */
+                margin: 0;
+
+                background-image: url("../svg/logo.svg");
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                background-color: transparent;
+                background-attachment: scroll;
+                background-origin: border-box;
+
+                filter: none;
+            }
+        }
+    }
+
+    & > nav.principal {
+        width: 100%;
+    }
+}
+
 /* Underline From Center */
 .dangtalogo-underline,
-a {
+a:not(.no-border) {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -351,6 +412,7 @@ body {
     & nav.principal {
         padding-right: 4vw;
     }
+    & > footer,
     main > section > article {
         padding: 5vh;
         padding-left: 4vw;
@@ -367,7 +429,7 @@ body {
         & nav.principal {
             padding-right: 7.5vw;
         }
-        main > section > article {
+        & > footer main > section > article {
             padding-left: 7.5vw;
             padding-right: 7.5vw;
         }
@@ -383,7 +445,7 @@ body {
         & nav.principal {
             padding-right: 10vw;
         }
-        main > section > article {
+        & > footer main > section > article {
             padding-left: 10vw;
             padding-right: 10vw;
         }
