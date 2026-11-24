@@ -78,5 +78,4 @@ console.log("=======================");
 
 figuras[figuras.length - 1].classList.add("img-before");
 figuras[figuras.length - 1].textContent = colores[figuras.length - 1];
-
 figuras[figuras.length - 1].style.backgroundColor = colores[figuras.length - 1];

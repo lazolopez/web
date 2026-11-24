@@ -38,10 +38,59 @@ figuras.forEach(function (figura, indice) {
     figura.style.backgroundColor = bgColorsGaleriaMario[indice];
 });
 
-captions.forEach(function (caption, indice) {
-    caption.textContent = personajesGaleriaMario[indice];
-});
-
 // captions.forEach(function (caption, indice) {
 //     caption.textContent = personajesGaleriaMario[indice];
 // });
+
+const info = document.querySelector("#info");
+
+let colores = document.querySelectorAll("#paleta-colores ul.paleta li");
+
+let colorSeleccionado = null;
+colores.forEach(function (li) {
+    li.style.backgroundColor = li.textContent;
+});
+
+function seleccionarColor() {
+    colorSeleccionado = this.textContent;
+    info.textContent = `Color seleccionado: ${colorSeleccionado}`;
+}
+
+function pintarFigura() {
+    if (colorSeleccionado === null) {
+        info.textContent = "Primero elige un color";
+        return;
+    }
+
+    this.style.backgroundColor = colorSeleccionado;
+    info.textContent = `${this.textContent} ahora es ${colorSeleccionado}`;
+}
+
+colores.forEach(function (li, indice) {
+    li.onclick = seleccionarColor;
+});
+
+figuras.forEach(function (figura, indice) {
+    figura.onclick = pintarFigura;
+});
+
+// ejercicio 2b
+
+// Agregar 2item de la lista.galeria
+
+// let ulGaleria = document.querySelector()
+
+let itemGaleria = document.createElement("li");
+let figureGaleria = document.createElement("figure");
+let captionGaleria = document.createElement("figcaption");
+
+ulGaleriaMario.appendChild(itemGaleria);
+itemGaleria.appendChild(figureGaleria);
+figureGaleria.appendChild(captionGaleria);
+
+figureGaleria.classList.add("img-before");
+bgColorsGaleriaMario.push("red");
+
+captions.forEach(function (caption, indice) {
+    caption.textContent = personajesGaleriaMario[indice];
+});
