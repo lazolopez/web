@@ -5,14 +5,14 @@
 ================================================== */
 
 :root {
-    --galeria-mario-1: url("../img/marioBros/mario.webp");
-    --galeria-mario-2: url("../img/marioBros/luigi.webp");
-    --galeria-mario-3: url("../img/marioBros/yoshi.webp");
-    --galeria-mario-4: url("../img/marioBros/bowser.webp");
-    --galeria-mario-5: url("../img/marioBros/wario.webp");
-    --galeria-mario-6: url("../img/marioBros/king-boo.webp");
-    --galeria-mario-7: url("../img/marioBros/setaAzul.webp");
-    --galeria-mario-8: url("../img/marioBros/lakitu.webp");
+    --galeria-mario-1: url("../img/mario.png");
+    --galeria-mario-2: url("../img/Luigi.webp");
+    --galeria-mario-3: url("../img/Yoshi.webp");
+    --galeria-mario-4: url("../img/Bowser.webp");
+    --galeria-mario-5: url("../img/Wario.webp");
+    --galeria-mario-6: url("../img/PrincesaDaisy.webp");
+    --galeria-mario-7: url("../img/PrincesaPeach.webp");
+    --galeria-mario-8: url("../img/Donkey-Kong.webp");
 }
 
 /* ==================================================
@@ -107,7 +107,7 @@
    SPRITES / PERSONAJES
 ================================================== */
 
-.mario {
+.personajeMario {
     background-image: var(--galeria-mario-1);
 }
 
