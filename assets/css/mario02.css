@@ -5,14 +5,14 @@
 /* ---------- Escenario (se usará en versiones posteriores) ---------- */
 
 :root {
-    --galeria-mario-1: url("assets/img/mario_PNG11\ \(1\).png");
-    --galeria-mario-2: url("assets/img/Luigi.webp");
-    --galeria-mario-3: url("assets/img/Princesa\ Daisy.webp");
-    --galeria-mario-4: url("assets/img/Princesa\ Peach.webp");
-    --galeria-mario-5: url("assets/img/Toad.webp");
-    --galeria-mario-6: url("assets/img/Wario.webp");
-    --galeria-mario-7: url("assets/img/Bowser.webp");
-    --galeria-mario-8: url("assets/img/Donkey-Kong.webp");
+    --galeria-mario-1: url("../../assets/img/mario_PNG11\ \(1\).png");
+    --galeria-mario-2: url("../../assets/img/Luigi.webp");
+    --galeria-mario-3: url("../../assets/img/Princesa\ Daisy.webp");
+    --galeria-mario-4: url("../../assets/img/Princesa\ Peach.webp");
+    --galeria-mario-5: url("../../assets/img/Toad.webp");
+    --galeria-mario-6: url("../../assets/img/Wario.webp");
+    --galeria-mario-7: url("../../assets/img/Bowser.webp");
+    --galeria-mario-8: url("../../assets/img/Donkey-Kong.webp");
 }
 
 body.jsMario {
