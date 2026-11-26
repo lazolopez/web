@@ -5,8 +5,9 @@
 // ===================================
 
 class Mario {
-    constructor(nombre = "Mario") {
+    constructor(nombre = "Mario", sprite = "mario.png") {
         this.nombre = nombre;
+        this.sprite = sprite;
         this.x = 20;
         this.scale = 1;
         this.rotation = 0;
@@ -20,7 +21,7 @@ class Mario {
 
         this.elemento.innerHTML = `
             <img
-                src="../../assets/img/mario.png"
+                src="${ruta}${this.sprite}"
                 alt="${this.nombre}"
                 draggable="false"
             >
@@ -179,6 +180,21 @@ class Mario {
     }
 }
 
+const ruta = "../../assets/img/";
+
+// prettier-ignore
+const personajes = [
+    "mario.png",
+    "luigi.webp",
+    "toad.webp",
+    "princesadaisy.webp",
+    "princesapeach.webp",
+    "wario.webp",
+    "yoshi.webp",
+    "donkey-kong.webp"
+];
+const nombres = ["mario.png", "luigi.webp", "toad.webp", "princesadaisy.webp", "princesapeach.webp", "wario.webp", "yoshi.webp", "donkey-kong.webp"];
+
 // ===================================
 // 2. VARIABLES DE CONTROL
 // ===================================
@@ -206,6 +222,32 @@ function crearMario() {
     marioActivo = nuevoMario;
 
     nuevoMario.mostrarMensaje(`${nuevoMario.nombre} ha sido creado.`);
+
+    return nuevoMario;
+}
+
+function crearMario() {
+    // Obtener el índice del siguiente personaje
+    const indice = contadorMario % nombres.length;
+
+    // Obtener nombre e imagen
+    const nombre = nombres[indice];
+    const imagen = personajes[indice];
+
+    // Crear una instancia
+    const nuevoMario = new Mario(nombre, imagen);
+
+    // Registrar el objeto
+    marios.push(nuevoMario);
+
+    // Convertirlo en personaje activo
+    marioActivo = nuevoMario;
+
+    // Incrementar contador
+    contadorMario++;
+
+    // Mostrar mensaje
+    nuevoMario.mostrarMensaje(`${nombre} ha sido creado.`);
 
     return nuevoMario;
 }
@@ -271,32 +313,72 @@ document.addEventListener("keydown", (evento) => {
 // 6. EVENTOS DE TRANSFORMACIÓN
 // ===================================
 
-document.querySelector("#btnAumentar").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.aumentar();
+// document.querySelector("#btnAumentar").addEventListener("click", () => {
+//     if (marioActivo) {
+//         marioActivo.aumentar();
+//     }
+// });
+
+document.addEventListener("keypress", (evento) => {
+    if (evento.key === "a") {
+        if (marioActivo) {
+            marioActivo.aumentar();
+        }
     }
 });
 
-document.querySelector("#btnEncoger").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.encoger();
+// document.querySelector("#btnEncoger").addEventListener("click", () => {
+//     if (marioActivo) {
+//         marioActivo.encoger();
+//     }
+// });
+
+document.addEventListener("keypress", (evento) => {
+    if (evento.key === "e") {
+        if (marioActivo) {
+            marioActivo.encoger();
+        }
     }
 });
 
-document.querySelector("#btnRotar").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.rotar(90);
+// document.querySelector("#btnRotar").addEventListener("click", () => {
+//     if (marioActivo) {
+//         marioActivo.rotar(90);
+//     }
+// });
+
+document.addEventListener("keypress", (evento) => {
+    if (evento.key === "r") {
+        if (marioActivo) {
+            marioActivo.rotar();
+        }
     }
 });
 
-document.querySelector("#btnDuplicar").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.duplicar();
+// document.querySelector("#btnDuplicar").addEventListener("click", () => {
+//     if (marioActivo) {
+//         marioActivo.duplicar();
+//     }
+// });
+
+document.addEventListener("keypress", (evento) => {
+    if (evento.key === "d") {
+        if (marioActivo) {
+            marioActivo.duplicar();
+        }
     }
 });
 
-document.querySelector("#btnReset").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.reiniciar();
+// document.querySelector("#btnReset").addEventListener("click", () => {
+//     if (marioActivo) {
+//         marioActivo.reiniciar();
+//     }
+// });
+
+document.addEventListener("keypress", (evento) => {
+    if (evento.code === "Backspace") {
+        if (marioActivo) {
+            marioActivo.reiniciar();
+        }
     }
 });
