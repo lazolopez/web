@@ -8,6 +8,7 @@ class Mario {
     constructor(nombre = "Mario", sprite = "mario.png") {
         this.nombre = nombre;
         this.sprite = sprite;
+        this.vidas = 3;
         this.x = 20;
         this.scale = 1;
         this.rotation = 0;
@@ -33,6 +34,15 @@ class Mario {
 
         // Actualizar posición
         this.actualizar();
+
+    }
+
+    get vidas() {
+        return this._vidas;
+    }
+
+    set vidas(vv) {
+        this._vidas = vv;
     }
 
     // ===================================
@@ -226,6 +236,13 @@ function crearMario() {
     return nuevoMario;
 }
 
+/**
+ * Función crearMario()
+ *
+ *
+ * @returns {HTMLElement}
+ */
+
 function crearMario() {
     // Obtener el índice del siguiente personaje
     const indice = contadorMario % nombres.length;
@@ -250,6 +267,23 @@ function crearMario() {
     nuevoMario.mostrarMensaje(`${nombre} ha sido creado.`);
 
     return nuevoMario;
+}
+
+function cambiarMarioActivo() {
+    // Comprobar que existen personajes
+    if (marios.length === 0) return;
+
+    // Buscar el índice del personaje activo
+    let indice = marios.indexOf(marioActivo);
+
+    // Seleccionar el siguiente personaje
+    indice = (indice + 1) % marios.length;
+
+    // Actualizar personaje activo
+    marioActivo = marios[indice];
+
+    // Mostrar mensaje
+    marioActivo.mostrarMensaje(`${marioActivo.nombre} es ahora el personaje activo.`);
 }
 
 // ===================================
@@ -380,5 +414,13 @@ document.addEventListener("keypress", (evento) => {
         if (marioActivo) {
             marioActivo.reiniciar();
         }
+    }
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.code === "Tab") {
+        evento.preventDefault();
+
+        cambiarMarioActivo();
     }
 });
