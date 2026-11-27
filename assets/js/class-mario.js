@@ -34,7 +34,6 @@ class Mario {
 
         // Actualizar posición
         this.actualizar();
-
     }
 
     get vidas() {
@@ -190,7 +189,7 @@ class Mario {
     }
 }
 
-const ruta = "../../assets/img/";
+const ruta = "../../assets/img/marioBros";
 
 // prettier-ignore
 const personajes = [
@@ -201,9 +200,9 @@ const personajes = [
     "princesapeach.webp",
     "wario.webp",
     "yoshi.webp",
-    "donkey-kong.webp"
+    
 ];
-const nombres = ["mario.png", "luigi.webp", "toad.webp", "princesadaisy.webp", "princesapeach.webp", "wario.webp", "yoshi.webp", "donkey-kong.webp"];
+const nombres = ["mario.png", "luigi.webp", "toad.webp", "princesadaisy.webp", "princesapeach.webp", "wario.webp", "yoshi.webp"];
 
 // ===================================
 // 2. VARIABLES DE CONTROL

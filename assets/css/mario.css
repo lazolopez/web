@@ -73,7 +73,7 @@ body.jsMario {
                     figure {
                         &.foto-mario {
                             &:before {
-                                background-image: url("../img/mario_PNG11\ \(1\).png");
+                                background-image: url("../img/marioBros/mario.png");
                                 background-size: contain;
                             }
                         }
